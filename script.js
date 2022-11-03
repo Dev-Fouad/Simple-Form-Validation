@@ -1,6 +1,6 @@
 let form = document.querySelector('.signup-form')
 let Feedback = document.querySelector('.Feedback')
-console.log(Feedback);
+let Usernamepattern = /^[a-zA-Z]{6,12}$/;
 
 
 form.addEventListener('submit' , function(e){
@@ -9,13 +9,12 @@ form.addEventListener('submit' , function(e){
 
     //Basic validation
     let username = form.Username.value
-    let Usernamepattern = /^[a-zA-Z]{6,12}$/;
 
 
     if(Usernamepattern.test(username)){
         // Feedback good info
         Feedback.textContent = "You are valid"
-        Feedback.style.border = "2px dotted green"
+        Feedback.style.border = "2px solid green"
 
     }else{
         // Feedback bad info
@@ -24,6 +23,22 @@ form.addEventListener('submit' , function(e){
         Feedback.style.fontSize = '12px'
     }
 })
+
+
+// Key board event
+form.Username.addEventListener('keyup' , function(e){
+
+    // console.log(e.target.value , form.Username.value);
+
+    if(Usernamepattern.test(form.Username.value)){
+        form.Username.setAttribute('class', 'suc')
+    }else {
+        form.Username.setAttribute('class' , 'error')
+    }
+
+})
+
+
 
 //Testing Regex
 // const username = 'shaunnn';
