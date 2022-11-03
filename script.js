@@ -1,6 +1,6 @@
 let form = document.querySelector('.signup-form')
 let Feedback = document.querySelector('.Feedback')
-let Usernamepattern = /^[a-zA-Z]{6,12}$/;
+let UsernamePattern = /^[a-zA-Z]{6,12}$/;
 
 
 form.addEventListener('submit' , function(e){
@@ -11,7 +11,7 @@ form.addEventListener('submit' , function(e){
     let username = form.Username.value
 
 
-    if(Usernamepattern.test(username)){
+    if(UsernamePattern.test(username)){
         // Feedback good info
         Feedback.textContent = "You are valid"
         Feedback.style.border = "2px solid green"
@@ -26,28 +26,25 @@ form.addEventListener('submit' , function(e){
 
 
 // Key board event
-form.Username.addEventListener('keyup' , function(e){
+form.User.addEventListener('keyup' , function(e){
 
-    // console.log(e.target.value , form.Username.value);
 
-    if(Usernamepattern.test(form.Username.value)){
-        form.Username.setAttribute('class', 'suc')
-    }else {
-        form.Username.setAttribute('class' , 'error')
+    if(UsernamePattern.test(e.target.value)){
+        form.Username.setAttribute('class', 'suce')
+    }else{
+        form.Username.setAttribute('class','err')
     }
-
 })
 
 
-
 //Testing Regex
-// const username = 'shaunnn';
-// const pattern = /^[a-z]{6,}$/;
+const username = 'shaunnn';
+const pattern = /^[a-z]{6,}$/;
 
-// let result = pattern.test(username)
+let result = pattern.test(username)
 
-// if (result){
-//     console.log('You are valid')
-// }else {
-//     console.log("You are invalid");
-// }
+if (result){
+    console.log('You are valid')
+}else {
+    console.log("You are invalid");
+}

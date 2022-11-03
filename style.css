@@ -18,10 +18,11 @@ input {
     margin: 10px auto;    
 }
 
-.success{
+.suce{
     border: 2px solid green;
 }
 
-.error {
+.err{
     border: 2px solid red;
 }
+
