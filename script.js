@@ -1,5 +1,6 @@
 let form = document.querySelector('.signup-form')
-let Feedback = document.querySelector('.feedback')
+let Feedback = document.querySelector('.Feedback')
+console.log(Feedback);
 
 
 form.addEventListener('submit' , function(e){
@@ -12,9 +13,15 @@ form.addEventListener('submit' , function(e){
 
 
     if(Usernamepattern.test(username)){
+        // Feedback good info
         Feedback.textContent = "You are valid"
+        Feedback.style.border = "2px dotted green"
+
     }else{
-        Feedback.textContent = "Enter a valid Username"
+        // Feedback bad info
+        Feedback.textContent = "Username must contain only letters between only and must be between 6 and 12 character long"
+        Feedback.style.border = "2px solid red"
+        Feedback.style.fontSize = '12px'
     }
 })
 
