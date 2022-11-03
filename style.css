@@ -1,0 +1,20 @@
+body{ 
+    height: 40rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}   
+
+form {
+    max-width: 200px;
+    padding: 10px;
+    background-color: white;
+    height: 13rem;
+}
+
+input {
+    display: block;
+    padding: 4px;
+    margin: 10px auto;    
+}
+
